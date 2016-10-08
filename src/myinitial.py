@@ -4,7 +4,7 @@ def draw_c(leng):
     ram = turtle.Turtle()
     ram.shape()
     ram.speed(0)
-    ram.color('red')
+    ram.color('blue')
     ram.forward(leng/2)
     ram.backward(leng/2)
     ram.left(90)
