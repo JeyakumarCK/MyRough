@@ -18,4 +18,5 @@ force2 = Movie("Force 2", "Indian action thriller movie",
                   "https://www.youtube.com/watch?v=r4O4Xec60_k")
 
 movies = [toy_story, avatar, kaashmora, force2]
-fresh_tomatoes.open_movies_page(movies)
+#fresh_tomatoes.open_movies_page(movies)
+force2.print_variables()
