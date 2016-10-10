@@ -9,7 +9,7 @@ def get_number():
         return mobno
     else:
         if (not mobno.startswith("+")):
-            print "Mobile number should start with +, please include the country code"
+            print "Mobile Number should start with +, please include the country code:"
             mobno = "0"
             print "Try again"
         elif (len(mobno) < 12):
@@ -27,7 +27,7 @@ def get_message():
         return mobmsg
     else:
         if (len(mobmsg) > 150):
-            print "Enter a message lesser than 150 characters length"
+            print "Enter a message lesser than 150 characters length:"
             mobmsg = ""
             print "Please Try again"
             
