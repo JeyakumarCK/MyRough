@@ -1,35 +1,36 @@
 # Download the twilio-python library from http://twilio.com/docs/libraries
 #from twilio.rest import TwilioRestClient
-from twilio import rest
+import twilio
+#from twilio import rest
 
 def get_number():
     mobno = raw_input("Mobile number to send SMS: (along with country code)")
-    print mobno, len(mobno)
+    print (mobno, len(mobno))
     if len(mobno) == 0:
         return mobno
     else:
         if (not mobno.startswith("+")):
-            print "Mobile Number should start with +, please include the country code:"
+            print ("Mobile Number should start with +, please include the country code:")
             mobno = "0"
-            print "Try again"
+            print ("Try again")
         elif (len(mobno) < 12):
-            print "Mobile number length should be atleast 11 digits including + symbol"
+            print ("Mobile number length should be atleast 11 digits including + symbol")
             mobno = "0"
-            print "Try again"
+            print ("Try again")
             
     return mobno
 
 def get_message():
     mobmsg = raw_input("Enter a message to send - Max 150 characters")
-    print mobmsg, len(mobmsg)
+    print (mobmsg, len(mobmsg))
 
     if len(mobmsg) == 0:
         return mobmsg
     else:
         if (len(mobmsg) > 150):
-            print "Enter a message lesser than 150 characters length:"
+            print ("Enter a message lesser than 150 characters length:")
             mobmsg = ""
-            print "Please Try again"
+            print ("Please Try again")
             
     return mobmsg
 
@@ -48,10 +49,10 @@ while (msg == ""):
 
 if (len(mobnum) > 0 and len(msg) > 0):
     message = client.messages.create(to=mobnum, from_="+13126267334", body=msg)
-    print message.sid
-    print "SMS sent to "+mobnum+", message is ["+msg+"]"
+    print (message.sid)
+    print ("SMS sent to "+mobnum+", message is ["+msg+"]")
 else :
-    print "Either number of message is null, hence not sending the sms"
+    print ("Either number of message is null, hence not sending the sms")
 
 #message = client.messages.create(to="+919952067334", from_="+13126267334",
 #                                     body="This is a sample sms sent from Python program")
